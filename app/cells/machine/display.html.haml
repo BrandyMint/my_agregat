@@ -1,0 +1,9 @@
+= machine.name
+= machine.location
+= machine.charge
+= machine.driver_charge
+= machine.user.name
+- machine.specification.each do |key, value|
+  = key
+  = value
+= machine.description

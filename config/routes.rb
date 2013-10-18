@@ -43,5 +43,7 @@ MyAgregat::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :categories, :only => [:show]
+  resources :categories, :only => [:show] do
+    resources :machines, :only => [:index]
+  end
 end
