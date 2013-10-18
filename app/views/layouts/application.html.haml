@@ -14,7 +14,9 @@
       .container
         .content
           .row
-            .col-md-12
+            .col-md-3
+              = render_cell :categories, :display
+            .col-md-9
               = render 'layouts/messages'
               = yield
           %footer
