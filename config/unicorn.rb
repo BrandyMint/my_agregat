@@ -1,38 +1,21 @@
 rails_env = ENV['RACK_ENV'] || 'production'
-puts "Unicorn env: #{rails_env}"
+
+APP_ROOT = File.expand_path(File.dirname(File.dirname(__FILE__)))
+
+worker_processes 3
+working_directory APP_ROOT
+listen APP_ROOT + "/tmp/sockets/unicorn.sock"
+pid  APP_ROOT + "/tmp/pids/unicorn.pid"
+stderr_path APP_ROOT + "/log/unicorn.stderr.log"
+stdout_path APP_ROOT + "/log/unicorn.stdout.log"
 
 if rails_env=='production'
-    worker_processes 3
-    APP_PATH = ENV['APP_PATH'] || '/home/www/app/'
-    working_directory APP_PATH + "current"
-
-    listen APP_PATH + "shared/pids/unicorn.sock"
-    pid APP_PATH + "shared/pids/unicorn.pid"
-    stderr_path APP_PATH + "shared/log/unicorn.stderr.log"
-    stdout_path APP_PATH + "shared/log/unicorn.stdout.log"
-elsif rails_env=='stage'
-    worker_processes 3
-    APP_PATH = ENV['APP_PATH'] || '/home/www/app/'
-    working_directory APP_PATH + "current"
-
-    listen APP_PATH + "shared/pids/unicorn.sock"
-    pid APP_PATH + "shared/pids/unicorn.pid"
-    stderr_path APP_PATH + "shared/log/unicorn.stderr.log"
-    stdout_path APP_PATH + "shared/log/unicorn.stdout.log"
-else
-    worker_processes 3
-    APP_PATH = ENV['APP_PATH'] || '/home/www/app/'
-    working_directory APP_PATH + "current"
-
-    listen APP_PATH + "shared/pids/unicorn.sock"
-    pid APP_PATH + "shared/pids/unicorn.pid"
-    stderr_path APP_PATH + "shared/log/unicorn.stderr.log"
-    stdout_path APP_PATH + "shared/log/unicorn.stdout.log"
+    worker_processes 10
 end
 
 # Helps ensure the correct unicorn binary is used when upgrading with USR2
 # # See http://unicorn.bogomips.org/Sandbox.html
-Unicorn::HttpServer::START_CTX[0] = "#{APP_PATH}current/bin/unicorn"
+Unicorn::HttpServer::START_CTX[0] = APP_ROOT + "/bin/unicorn"
 
 timeout 60
 preload_app true
