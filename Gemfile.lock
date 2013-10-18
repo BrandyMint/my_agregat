@@ -101,6 +101,10 @@ GEM
       activesupport (= 4.0.0)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.3)
+    activerecord-postgres-hstore (0.7.6)
+      activerecord (>= 3.1)
+      pg-hstore (>= 1.1.5)
+      rake
     activesupport (4.0.0)
       i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
@@ -237,6 +241,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (2.0.5)
+    hashr (0.0.22)
     hike (1.2.3)
     holepicker (0.3.1)
       json (>= 1.7.7)
@@ -302,6 +307,7 @@ GEM
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     pg (0.16.0)
+    pg-hstore (1.2.0)
     pg_array_parser (0.0.9)
     poltergeist (1.3.0)
       capybara (~> 2.1.0)
@@ -401,6 +407,8 @@ GEM
     resque_spec (0.13.0)
       resque (>= 1.19.0)
       rspec (>= 2.5.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -477,6 +485,14 @@ GEM
       atomic
     tilt (1.4.1)
     tins (0.12.0)
+    tire (0.6.0)
+      activemodel (>= 3.0)
+      activesupport
+      ansi
+      hashr (~> 0.0.19)
+      multi_json (~> 1.3)
+      rake
+      rest-client (~> 1.6)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -507,6 +523,7 @@ PLATFORMS
 DEPENDENCIES
   active_attr
   active_link_to
+  activerecord-postgres-hstore
   airbrake!
   authority
   awesome_print
@@ -589,6 +606,7 @@ DEPENDENCIES
   simplecov
   simplecov-rcov
   sprockets-rails!
+  tire
   turbolinks
   turn
   uglifier (~> 1.3)

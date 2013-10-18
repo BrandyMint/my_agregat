@@ -11,6 +11,7 @@ gem 'rails', '4.0.0'
 # Use postgresql as the database for ActiveRecord
 gem 'pg'
 gem 'pg_array_parser'
+gem 'activerecord-postgres-hstore'
 
 gem 'settingslogic'
 
@@ -119,6 +120,8 @@ gem 'coffee-rails', github: 'rails/coffee-rails'
 # gem 'jquery_datepicker'
 
 # gem 'select2-rails'
+
+gem 'tire'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
