@@ -108,6 +108,11 @@ ru:
       year: Год
   errors: &errors
     format: ! '%{attribute} %{message}'
+    models:
+      user:
+        attributes:
+          phone:
+            improbable_phone: Не верный формат телефона
     messages:
       invalid_range: Дата окончания периода должна быть больше даты начала
       intersection: Период пересекается с другим (id = %{id})

@@ -3,8 +3,6 @@
   = f.error_notification
   = display_base_errors resource
   = f.input :name, :autofocus => true
-  = f.input :phone, :required => true
-  = f.input :password, :required => true
-  = f.input :password_confirmation, :required => true
+  = f.input :phone, :required => true, :input_html=>{:value => resource.phone.try{|p| p.phony_formatted(:normalize => :RU, :format => :international)}}
   = f.button :submit, t('sign_up'), :class => 'btn-primary'
 = render "devise/shared/links"

@@ -124,6 +124,7 @@ gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'tire'
 gem 'cells'
 gem 'devise'
+gem 'phony_rails'
 
 
 group :doc do
