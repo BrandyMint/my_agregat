@@ -121,7 +121,6 @@ gem 'coffee-rails', github: 'rails/coffee-rails'
 
 # gem 'select2-rails'
 
-gem 'tire'
 gem 'cells'
 gem 'devise'
 gem 'phony_rails'
