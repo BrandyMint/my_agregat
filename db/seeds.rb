@@ -6,8 +6,8 @@ Category.create([
 ])
 
 User.create([
-  {:name=>'Дядя Вася', :phone => '89603117679'},
-  {:name=>'ООО СтройРемонтМонтаж', :phone => '89603117649'}
+  {:name=>'Дядя Вася', :phone => '89603117679', :password => 'password'},
+  {:name=>'ООО СтройРемонтМонтаж', :phone => '89603117649', :password => 'password'}
 ])
 
 Machine.create([

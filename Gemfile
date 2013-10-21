@@ -123,6 +123,7 @@ gem 'coffee-rails', github: 'rails/coffee-rails'
 
 gem 'tire'
 gem 'cells'
+gem 'devise'
 
 
 group :doc do
