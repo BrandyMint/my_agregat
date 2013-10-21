@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable
+  include Authority::UserAbilities
 
   phony_normalize :phone, :country_code=>'RU'
   validates_plausible_phone :phone, :country_code=>'7'

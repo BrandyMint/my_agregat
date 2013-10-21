@@ -1,0 +1,9 @@
+- if @user == current_user
+  .row
+    = active_link_to t('.active'), user_machines_path(@user)
+    = active_link_to t('.archive'), archive_user_machines_path(@user)
+
+- @machines.each do |machine|
+  = render_cell :machine, :display_own, machine
+
+= paginate @machines

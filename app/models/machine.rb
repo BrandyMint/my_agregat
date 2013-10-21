@@ -1,4 +1,5 @@
 class Machine < ActiveRecord::Base
+  include Authority::Abilities
   belongs_to :category
   belongs_to :user
 
@@ -11,5 +12,13 @@ class Machine < ActiveRecord::Base
 
   def set_specification
     self.specification = {} if self.specification.blank?
+  end
+
+  def activate
+    self.update_attribute(:active, true)
+  end
+
+  def archivate
+    self.update_attribute(:active, false)
   end
 end

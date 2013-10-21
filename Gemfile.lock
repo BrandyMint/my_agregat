@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/airbrake/airbrake.git
-  revision: da8dc55d7edd85b8e12558a4c4169073e03ba62c
+  revision: 0b3b6772f1a121e329a9d5b61bc3d723dcd5cffa
   specs:
-    airbrake (3.1.12)
+    airbrake (3.1.14)
       builder
       json
 

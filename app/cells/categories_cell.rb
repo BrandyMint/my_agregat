@@ -1,4 +1,4 @@
-class CategoriesCell < Cell::Rails
+class CategoriesCell < ApplicationCell
   def display
     categories = Category.all
     render :locals => {categories: categories}
