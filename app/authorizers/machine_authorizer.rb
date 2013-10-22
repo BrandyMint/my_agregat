@@ -7,7 +7,7 @@ class MachineAuthorizer < ApplicationAuthorizer
     resource.user == user
   end
 
-  def createable_by?(user)
+  def creatable_by?(user)
     resource.user == user
   end
 

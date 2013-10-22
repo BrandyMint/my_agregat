@@ -1,0 +1,9 @@
+= simple_form_for [@user, @machine] do |f|
+  = f.error_notification
+  = f.association :category
+  = f.input :name
+  = f.input :location
+  = f.input :charge
+  = f.input :driver_charge
+  = f.input :description
+  = f.submit

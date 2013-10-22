@@ -11,7 +11,7 @@ MyAgregat::Application.routes.draw do
 
   resources :users, :only => [:show] do
     scope module: :users do
-      resources :machines, :only => [:index, :show, :edit] do
+      resources :machines, :except=>:destroy do
         member do
           get :activate
           get :archivate

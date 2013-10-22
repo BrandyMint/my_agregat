@@ -1,0 +1,13 @@
+.row
+  = @machine.name
+  = @machine.location
+  = @machine.charge
+  = @machine.driver_charge
+  = @machine.user.name
+  - @machine.specification.each do |key, value|
+    = key
+    = value
+  = @machine.description
+  = link_to t('.edit'), edit_user_machine_path(@machine.user, @machine) if @machine.updatable_by?(current_user)
+  = link_to t('.activate'), activate_user_machine_path(@machine.user, @machine) if !@machine.active? and @machine.updatable_by?(current_user)
+  = link_to t('.archivate'), archivate_user_machine_path(@machine.user, @machine) if @machine.active? and @machine.updatable_by?(current_user)
